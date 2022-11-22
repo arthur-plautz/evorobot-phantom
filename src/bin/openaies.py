@@ -9,7 +9,6 @@
    requires es.py, policy.py, and evoalgo.py 
 """
 
-import pandas as pd
 import time
 from evoalgo import EvoAlgo
 import sys

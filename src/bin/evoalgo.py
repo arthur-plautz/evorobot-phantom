@@ -11,8 +11,10 @@
 
 import numpy as np
 import time
-from datainterface.phantom_evolution import PhantomEvolution
-from curriculumlearning.specialist.manager import SpecialistManager
+from curriculum_learning.specialist.manager import SpecialistManager
+from data_interfaces.loaders.phantom import PhantomLoader
+from data_interfaces.utils import set_root
+set_root('evorobot-phantom')
 
 class EvoAlgo(object):
     def __init__(self, env, policy, seed, fileini, filedir):
@@ -30,7 +32,7 @@ class EvoAlgo(object):
         self.last_save_time = time.time()    # the last time in which data have been saved
         self.policy_trials = self.policy.ntrials
 
-        self.phantom_interface = PhantomEvolution(
+        self.phantom_interface = PhantomLoader(
             self.seed,
             self.policy_trials,
             self.__env_name
