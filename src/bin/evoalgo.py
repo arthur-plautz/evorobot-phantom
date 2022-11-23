@@ -40,7 +40,8 @@ class EvoAlgo(object):
         self.specialist_manager = SpecialistManager(
             'main',
             self.__env_name,
-            self.seed
+            self.seed,
+            upload_reference='phantom'
         )
         self.init_specialist()
 
